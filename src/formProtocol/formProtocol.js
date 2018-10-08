@@ -1,4 +1,5 @@
 import { merge, has } from "lodash";
+import { Button } from "antd";
 
 const createForm = (configs, collector) => {
   const nodeHandlersCollector = collector.nodeHandlersCollector;
@@ -33,11 +34,10 @@ const createForm = (configs, collector) => {
     });
 
     // render node
-    return component && nodeHandler(component, conf);
+    return component && nodeHandler(Button, conf);
   });
 };
 
-// 协议执行时候，默认 第一个参数是配置，第二个参数是内部收集对象，可以访问其他收集器
 const render = (configs, collector) => {
   return createForm(configs, collector);
 };

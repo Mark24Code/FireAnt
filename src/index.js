@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Formaker from "./fireAnt";
 import Input from "./input";
+import formProtocol from "./formProtocol";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.formaker = new Formaker(this.formConfig);
     this.formaker.use(Input);
+    this.formaker.use(formProtocol);
   }
   formConfig = {
     version: "0.0.1",

@@ -4,7 +4,7 @@ import allProtocols from "./protocols";
 import allNodeHandlers from "./nodeHandlers";
 import allComponents from "./components";
 
-export default class Robot {
+export default class FireAnt {
   constructor(opt) {
     this.options = assign({}, opt);
     this.init();
@@ -24,7 +24,6 @@ export default class Robot {
     this.collector = collector;
     this.premount(options);
     this.preproccess(options);
-    this.protocolProcessor = this.getProtocolProcessor();
   };
 
   getProtocolProcessor = () => {
@@ -73,8 +72,13 @@ export default class Robot {
     }
   };
 
+  beforeRender = () => {
+    this.protocolProcessor = this.getProtocolProcessor();
+  };
+
   render = () => {
-    return this.protocolProcessor(this.$app);
+    this.beforeRender();
+    return this.protocolProcessor(this.$app, this.collector);
   };
   createApp = () => {
     return this.render();

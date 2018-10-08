@@ -1,7 +1,4 @@
 import { assign, has, camelCase } from "lodash";
-// import protocolsCollector from "./versionToProtocolMap";
-// import nodeHandlersCollector from "./nodeHandlersCollectorMap";
-// import componentsCollector from "./componentsCollectorMap";
 
 const nameFormatter = name => {
   return camelCase(name);
