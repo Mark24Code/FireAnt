@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Formaker from "./robot";
+import Formaker from "./fireAnt";
 import Input from "./input";
 
 class App extends Component {
