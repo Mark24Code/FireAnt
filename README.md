@@ -1,2 +1,0 @@
-# FireAnt
-Created with CodeSandbox
