@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Formaker from "./fireAnt";
-import Input from "./input";
-import formProtocol from "./formProtocol";
+import Input from "./testInputComp";
+import formProtocol from "./testFormProtocol";
 
 class App extends Component {
   constructor(props) {
