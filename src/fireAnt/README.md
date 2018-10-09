@@ -29,7 +29,7 @@
               console.log("hello");
             }
           },
-          children: "测试",
+          child: "测试",
           extends: null,
           nodeHandler: "default"
         },
@@ -44,7 +44,7 @@
 * type：作为匹配组件的基础
 * props：熟悉
 * methods：方法
-* children：子元素
+* child：子元素,可以是数组，或者是对象
 * extends: 自定义拓展
 * nodeHandler: 处理节点的方法，如果没有默认使用default(React.createElement)
 
