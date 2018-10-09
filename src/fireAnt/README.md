@@ -71,6 +71,7 @@ this.app.use(CustomPlugin)
 
 ```
 # TODO
+
 1. 类型检查
   props
   methods
@@ -78,5 +79,8 @@ this.app.use(CustomPlugin)
 2. 配合类型检查，抛出的异常
 
 3. 包管理，
+
+4. 协议中加工合并属性后，应该去移除掉。
+  child, extends etc.
 
 
