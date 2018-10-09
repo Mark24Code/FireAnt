@@ -1,0 +1,16 @@
+import React from "react";
+
+class DivComp extends React.Component {
+  render() {
+    return <div {...this.props}>{this.props.children}</div>;
+  }
+}
+
+const defaultComponent = {};
+
+defaultComponent.install = collector => {
+  // 集中化安装，install是个约定接口，个人觉得install更好
+  collector.installComponent("divComp", DivComp);
+};
+
+export default defaultComponent;

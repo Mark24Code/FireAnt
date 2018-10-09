@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Formaker from "./fireAnt";
+import divComp from "./testContainerComp";
 import Input from "./testInputComp";
 import formProtocol from "./testFormProtocol";
 
@@ -9,6 +10,7 @@ class App extends Component {
     super(props);
     this.formaker = new Formaker(this.formConfig);
     this.formaker.use(Input);
+    this.formaker.use(divComp);
     this.formaker.use(formProtocol);
   }
   formConfig = {
@@ -26,7 +28,7 @@ class App extends Component {
               console.log("hello");
             }
           },
-          children: "测试",
+          child: "测试",
           extends: null,
           nodeHandler: "default"
         },
@@ -39,7 +41,7 @@ class App extends Component {
           methods: {
             type: "primary"
           },
-          children: "测试2222",
+          child: "测试2222",
           extends: null,
           nodeHandler: "default"
         },
@@ -57,6 +59,38 @@ class App extends Component {
           },
           extends: null,
           nodeHandler: "default"
+        },
+        {
+          name: "test5",
+          type: "divComp",
+          props: {
+            placeholder: "teAAAA"
+          },
+          extends: null,
+          nodeHandler: "default",
+          // children: "test",
+          child: [
+            {
+              name: "test6",
+              type: "divComp",
+              props: {
+                placeholder: "testChild"
+              },
+              extends: null,
+              nodeHandler: "default",
+              child: [
+                {
+                  name: "test7",
+                  type: "input",
+                  props: {
+                    placeholder: "testChild"
+                  },
+                  extends: null,
+                  nodeHandler: "default"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
