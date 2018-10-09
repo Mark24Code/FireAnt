@@ -72,16 +72,15 @@ class Builder {
     }
   };
 
-  createForm = () => {
-    const formConf = this.configs.formFields;
-    return this.transToNode(formConf);
+  render = () => {
+    return this.transToNode(this.configs);
   };
 }
 
 // 协议执行时候，默认 第一个参数是配置，第二个参数是内部收集对象，可以访问其他收集器
 const render = (configs, collector) => {
-  const builder = new Builder(configs, collector);
-
-  return builder.createForm();
+  const formConf = configs.formFields; // 对约定字段处理，这里是特殊部分
+  const builder = new Builder(formConf, collector); // TODO 单一实例，节省内存
+  return builder.render();
 };
 export default render;
