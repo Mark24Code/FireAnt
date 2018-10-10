@@ -4,6 +4,7 @@ import Formaker from "./fireAnt";
 import divComp from "./testContainerComp";
 import Input from "./testInputComp";
 import formProtocol from "./testFormProtocol";
+import TagPlugin from "./tagPlugin";
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends Component {
     this.formaker.use(Input);
     this.formaker.use(divComp);
     this.formaker.use(formProtocol);
+    this.formaker.use(TagPlugin);
   }
   formConfig = {
     version: "0.0.1",
@@ -81,12 +83,11 @@ class App extends Component {
               child: [
                 {
                   name: "test7",
-                  type: "input",
+                  type: "tag",
                   props: {
-                    placeholder: "testChild"
+                    color: "magenta"
                   },
-                  extends: null,
-                  nodeHandler: "default"
+                  child: "ssss"
                 }
               ]
             }
