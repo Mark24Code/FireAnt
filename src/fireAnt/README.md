@@ -7,7 +7,7 @@
   };
 
   `version`: 指定协议版本
-  
+
   `app` 是核心防止配置的地方，自定义协议处理的是 `app` 对象
 
 
@@ -46,6 +46,9 @@
 * methods：方法
 * child：子元素,可以是数组，或者是对象
 * extends: 自定义拓展
+* extends.displayAssert: func 类型，返回bool，组件是否展示的条件
+      默认空函数，
+      true显示，false不显示
 * nodeHandler: 处理节点的方法，如果没有默认使用default(React.createElement)
 
 methods,extends，name，name生成的id、key会并入props传给组件
@@ -57,7 +60,7 @@ methods,extends，name，name生成的id、key会并入props传给组件
 ```javascript
 // 1. 生成实例
 const conf = { ... }
-this.app = new Robot(conf); 
+this.app = new Robot(conf);
 
 this.app.config(conf); // 延时加载conf的接口
 
@@ -71,7 +74,6 @@ this.app.use(CustomPlugin)
 
 ```
 # TODO
-
 1. 类型检查
   props
   methods
@@ -80,27 +82,4 @@ this.app.use(CustomPlugin)
 
 3. 包管理，
 
-4. 协议中加工合并属性后，应该去移除掉。
-  child, extends etc.
 
-
-## 使用Tips：
-
-1. 如果是一个纯展示的，
-那么你需要在 constructor里面去声明整个builder的过程
-
-2. 如果是一个能够反复工作的组件
-
-那么你需要在 容器组件的内部，声明换一个builder函数，
-然后内部声明整个，安装和构建过程。
-在最后容器的 render中去使用这个函数。
-
-当你的state变化，函数会被重新运行。
-
-页面组件即时被重新解释。组件将会渲染。
-
-这里配置选项中，可以使用 this.state的引用，等等。这时候的props的表现，更像真实的props。
-
-
-3. TODO，2点弥补了1点只能工作一次的问题。但是2点可能带来性能问题。
-所以可能需要一个类似Vue一样的全局唯一实例，来控制一些中心对象的生成。

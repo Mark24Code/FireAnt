@@ -1,7 +1,7 @@
 {
   "name": "fireant",
   "version": "1.0.0",
-  "description": "AntD Formaker 表单生成器",
+  "description": "胶水协议",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
